@@ -1,7 +1,17 @@
+.social-connection-button {
+    min-width: 12rem !important;
+}
+
 .social-connection-logo {
-    max-height: 2.5rem;
-    max-width: 2.5rem;
+    max-height: 2rem;
+    max-width: 2rem !important;
     border: 1px solid #c9cace;
     border-radius: 4px;
-    padding: 1rem;
+    margin-right: 1rem;
+}
+
+.social-connection-logo .v-image__image {
+    max-height: 1.4rem;
+    max-width: 1.4rem;
+    margin: 0.25rem;
 }

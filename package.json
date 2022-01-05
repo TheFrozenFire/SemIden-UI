@@ -8,12 +8,16 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@auth0/auth0-spa-js": "^1.19.2",
+    "@auth0/auth0-spa-js": "github:TheFrozenFire/auth0-spa-js#feature/customize-nonce",
+    "big-integer": "^1.6.51",
+    "buffer": "^6.0.3",
     "core-js": "^3.6.5",
     "snark-jwt-verify": "github:TheFrozenFire/snark-jwt-verify",
     "vue": "^2.6.11",
     "vue-async-computed": "^3.9.0",
-    "vuetify": "^2.4.0"
+    "vuetify": "^2.4.0",
+    "web3": "^1.6.1",
+    "web3modal": "^1.9.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -40,11 +44,15 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-unused-vars": "off",
+      "no-control-regex": "off"
+    }
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
+    "last 2 chrome version",
+    "last 2 firefox version",
+    "last 2 safari version",
+    "last 2 edge version"
   ]
 }

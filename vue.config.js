@@ -1,5 +1,6 @@
 module.exports = {
   transpileDependencies: [
-    'vuetify'
+    'vuetify',
+    'snark-jwt-verify'
   ]
 }

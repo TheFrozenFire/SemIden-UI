@@ -4,10 +4,11 @@
     tile
   >
     <v-list-item
+      class="float-left"
       v-for="connection in displayedSocialConnections"
       v-bind:key="connection.name"
     >
-      <v-btn v-on:click="$root.$emit('social-login', connection)">
+      <v-btn class="social-connection-button" v-on:click="$root.$emit('social-login', connection)">
         <v-img
           class="social-connection-logo"
           v-bind:src="connection.image"
