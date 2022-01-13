@@ -135,6 +135,8 @@ export default {
       
       const p256 = (s) => `"0x${bigInt(s).toString(16).padStart(64, '0')}"`;
       
+      const inputHash = Array.from(new Uint8Array(await window.crypto.subtle.digest('SHA-256', (new TextEncoder()).encode(input)))).map(b => b.toString(16).padStart(2, '0')).join('');
+      
       const calldata = `[${p256(proof.pi_a[0])}, ${p256(proof.pi_a[1])}],` +
         `[[${p256(proof.pi_b[0][1])}, ${p256(proof.pi_b[0][0])}],[${p256(proof.pi_b[1][1])}, ${p256(proof.pi_b[1][0])}]],` +
         `[${p256(proof.pi_c[0])}, ${p256(proof.pi_c[1])}],` +
@@ -145,6 +147,8 @@ export default {
       console.log(hashOut);
       console.log(claims);
       console.log(calldata);
+      
+      console.log(`"0x${inputHash}", [${publicSignals.map(s => p256(s)).join(',')}]`);
       
       app.proof_is_executing = false;
     })
